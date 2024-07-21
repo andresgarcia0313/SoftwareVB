@@ -1,0 +1,15 @@
+# Archivos binarios
+bin/
+obj/
+
+# Archivos de compilación generados
+*.dll
+*.pdb
+*.exe
+
+
+# Archivos temporales y cachés
+*.cache
+*.log
+*.tmp
+*.swp
