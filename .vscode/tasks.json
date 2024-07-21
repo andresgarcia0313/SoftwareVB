@@ -9,7 +9,10 @@
                 "build",
                 "${workspaceFolder}/SoftwareVB.vbproj"
             ],
-            "problemMatcher": "$msCompile"
+            "problemMatcher": "$msCompile",
+            "presentation": {
+                "reveal": "silent"
+            }
         }
     ]
 }

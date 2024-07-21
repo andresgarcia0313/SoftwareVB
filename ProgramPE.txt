@@ -1,0 +1,70 @@
+Imports System
+
+Module ProgramPE
+    Sub Main(args As String())
+        Dim saludo As String = "Bienvenido" 'Variable de tipo String
+        Dim mensaje As String = "Hola!" 'Variable de tipo String
+        Dim numero As Integer = 10 'Variable de tipo Integer
+        Dim miDecimal As Decimal = 10.5D 'Variable de tipo Decimal
+        Dim miBoolean As Boolean = True 'Variable de tipo Boolean
+        Dim miFecha As Date = #07/21/2024# 'Variable de tipo Date
+        Dim miObject As Object = "Texto" ' También puede ser un número o cualquier otro tipo
+
+
+
+        Dim resultado As Integer
+        
+        Console.WriteLine(saludo)
+        If saludo.Length > 5 Then
+            Console.WriteLine("El saludo tiene más de 5 caracteres.")
+        Else
+            Console.WriteLine("El saludo tiene 5 caracteres o menos.")
+        End If
+        MostrarSaludo(saludo)
+        MostrarMensaje(mensaje)
+        resultado = numero * 2 
+        Console.WriteLine("El resultado de multiplicar " & numero & " por 2 es: " & resultado)
+        For i As Integer = 1 To 5
+            Console.WriteLine("Número: " & i)
+        Next
+        Dim contador As Integer = 0
+        While contador < 3
+            Console.WriteLine("Contador: " & contador)
+            contador += 1
+        End While
+        Dim opcion As Integer = 2
+        Select Case opcion
+            Case 1
+                Console.WriteLine("Opción 1 seleccionada")
+            Case 2
+                Console.WriteLine("Opción 2 seleccionada")
+            Case Else
+                Console.WriteLine("Opción no reconocida")
+        End Select
+
+        Try
+            Console.WriteLine("Ingrese el número 0 para generar el defecto:")
+            Dim input As String = Console.ReadLine()
+            Dim numeroIngresado As Integer
+            If Integer.TryParse(input, numeroIngresado) Then
+                Dim division As Integer = 10 / numeroIngresado
+            Else
+                Console.WriteLine("Error: El valor ingresado no es un número válido.")
+            End If
+        Catch ex As DivideByZeroException
+            Console.WriteLine("Error: División por cero no permitida.")
+        End Try
+
+        Stop
+
+        Console.WriteLine("Adiós")
+    End Sub
+
+    Sub MostrarSaludo(ByVal saludo As String)
+        Console.WriteLine(saludo)
+    End Sub
+
+    Sub MostrarMensaje(ByVal mensaje As String)
+        Console.WriteLine(mensaje)
+    End Sub
+End Module

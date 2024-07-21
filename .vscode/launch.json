@@ -5,15 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "VB Console",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "build",
-            "program": "${workspaceFolder}/bin/Debug/net8.0/SoftwareVB.dll",
-            "args": [],
-            "cwd": "${workspaceFolder}",
-            "stopAtEntry": true,
-            "console": "internalConsole"
+            "name": "VB",// Nombre de la configuración
+            "type": "coreclr",// Tipo de compilador
+            "request": "launch",// Tipo de ejecución que es lanzar
+            "preLaunchTask": "build",// Tarea de compilar antes de depurar 
+            "program": "${workspaceFolder}/bin/Debug/net8.0/SoftwareVB.dll",// Ruta del ejecutable
+            "args": [],// Argumentos que se le pasan al ejecutable
+            "cwd": "${workspaceFolder}",// Directorio de trabajo
+            "stopAtEntry": false,// Detener en la primera línea para depurar
+            "console": "internalConsole", // Muestra la salida en la consola integrada de vscode
+            "justMyCode":false, // Cuando esta en true solo depura el código del usuario
+            "enableStepFiltering": true, // Filtra los pasos de depuración para mostrar solo el código del usuario
+            "internalConsoleOptions": "openOnSessionStart", // Abre la consola interna al iniciar la sesión de depuración
         }
     ]
 }
